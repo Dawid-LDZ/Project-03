@@ -1,0 +1,357 @@
+body {
+  --SoftOrange: hsl(35, 77%, 62%);
+  --SoftRed: hsl(5, 85%, 63%);
+
+  --Off-white: #fffdfa;
+  --GrayishBlue: #c5c6ce;
+  --DarkGrayishBlue: #5d5f79;
+  --VeryDarkBlue: #00001a;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: var(--GrayishBlue);
+  scroll-behavior: smooth;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.wrapper {
+  width: 343px;
+  background-color: var(--Off-white);
+  padding: 14px 16px 24px 16px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  height: 70px;
+  margin-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 990;
+  background-color: var(--Off-white);
+}
+.toolbar {
+  display: none;
+  text-decoration: none;
+}
+.mobile_menu_wrap {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  max-width: 0px;
+  height: 100vh;
+  background-color: var(--Off-white);
+  transition: max-width 0.6s;
+  overflow: hidden;
+}
+.mobile_menu_wrap.open_menu {
+  max-width: 240px;
+}
+.toolbar_mobile {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-top: 84px;
+  margin-left: 24px;
+  gap: 24px;
+  width: 216px;
+}
+.close_button {
+  position: relative;
+  top: 27px;
+  left: 190px;
+  font-weight: 800;
+  font-size: 31px;
+  border: transparent;
+  background-color: transparent;
+}
+.mobile_nav_button {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #00001a;
+  border: transparent;
+  background-color: transparent;
+  text-decoration: none;
+}
+.mobile_nav_button:hover {
+  font-weight: 700;
+}
+.line {
+  width: 40px;
+  height: 3px;
+  background-color: var(--VeryDarkBlue);
+  margin: 4px 0px;
+}
+.navi_button {
+  background: transparent;
+  border: none;
+}
+.logo {
+  position: relative;
+  width: fit-content;
+  height: 28px;
+}
+main {
+  display: grid;
+  gap: 64px;
+}
+.home {
+  display: grid;
+  height: 636px;
+  width: 100%;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.image_mobile {
+  display: block;
+  height: 300px;
+}
+.image_full {
+  display: none;
+  height: 300px;
+  width: 100%;
+}
+h1 {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 40px;
+  color: var(--VeryDarkBlue);
+}
+p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+}
+.home_par {
+  color: var(--DarkGrayishBlue);
+}
+.home_button {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 4.375px;
+  color: var(--Off-white);
+  width: 185px;
+  height: 48px;
+  background-color: var(--SoftRed);
+  border: none;
+  transition-duration: 0.4s;
+}
+.new {
+  background-color: var(--VeryDarkBlue);
+  width: 100%;
+  max-width: 350px;
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  align-content: space-between;
+  padding: 7% 0;
+}
+.all {
+  display: grid;
+  align-content: space-between;
+  justify-content: center;
+  gap: 20px;
+}
+
+.new_article {
+  width: 310px;
+  justify-items: start;
+}
+h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  color: var(--SoftOrange);
+  text-align: left;
+  margin-bottom: 4px;
+}
+.new_button {
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 24px;
+  color: var(--Off-white);
+  transition-duration: 0.4s;
+  background: transparent;
+  margin-bottom: 8px;
+  text-align: left;
+}
+.new_par {
+  color: var(--GrayishBlue);
+}
+.par_separator {
+  width: 303px;
+  height: 1px;
+  margin-top: 9px;
+  margin-bottom: 11px;
+  background-color: var(--DarkGrayishBlue);
+}
+.popular {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 32px;
+}
+.popular_article {
+  display: flex;
+  width: 100%;
+  max-width: 350px;
+  height: 129px;
+}
+.popul_img {
+  width: 99px;
+  height: fit-content;
+}
+.popular_items {
+  margin-left: 22px;
+  width: 100%;
+  max-width: 229px;
+  align-content: space-between;
+}
+h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  color: var(--GrayishBlue);
+  padding-bottom: 12px;
+}
+.popul_button {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 24px;
+  color: var(--VeryDarkBlue);
+  transition-duration: 0.4s;
+  border: transparent;
+  background-color: transparent;
+  text-align: start;
+}
+
+.popul_par {
+  color: var(--DarkGrayishBlue);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  padding-top: 9px;
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    width: 1110px;
+    display: grid;
+    grid-template-areas:
+      "one"
+      "two";
+    grid-template-columns: 1110px;
+    grid-template-rows: 70px 704px;
+    padding: 75px 165px 129px 165px;
+    row-gap: 39px;
+  }
+  header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-area: one;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navi_button {
+    display: none;
+  }
+  .mobile_menu_wrap {
+    display: none;
+  }
+  .toolbar {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+  }
+  .desktop_nav_button {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    color: var(--DarkGrayishBlue);
+    border: transparent;
+    background-color: transparent;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  .desktop_nav_button:hover {
+    color: var(--SoftRed);
+    font-weight: 700;
+  }
+  .logo {
+    height: 40px;
+  }
+  main {
+    display: grid;
+    grid-area: two;
+    grid-template-areas:
+      "three three four"
+      "five five five";
+    grid-template-columns: 350px 350px 350px;
+    grid-template-rows: 511px 129px;
+    gap: 71px 30px;
+  }
+  .home {
+    grid-area: three;
+    display: grid;
+    grid-template-areas:
+      "six six "
+      "seven eight";
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 300px 181px;
+    height: auto;
+    justify-content: space-between;
+
+    gap: 30px;
+  }
+  .image_full {
+    display: block;
+    grid-area: six;
+  }
+  .image_mobile {
+    display: none;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 56px;
+    grid-area: seven;
+    align-self: center;
+  }
+  .home_par {
+    grid-area: eight;
+    align-self: start;
+  }
+  .home_button {
+    grid-area: eight;
+    align-self: end;
+  }
+  .home_button:hover {
+    background-color: var(--VeryDarkBlue);
+    color: var(--Off-white);
+  }
+  .new {
+    grid-area: four;
+    height: auto;
+  }
+  .new_button:hover {
+    color: var(--SoftOrange);
+  }
+  .popular {
+    grid-area: five;
+    width: 100%;
+    grid-auto-flow: column;
+  }
+  .popul_button:hover {
+    color: var(--SoftRed);
+  }
+  .toolbar_mobile {
+    display: none;
+  }
+}

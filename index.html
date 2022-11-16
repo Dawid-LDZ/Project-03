@@ -56,86 +56,128 @@
           </p>
           <button class="home_button">READ MORE</button>
         </section>
-        <section class="new">
-          <div class="all">
+        <section class="new" id="new_art">
                 <h2 id="new">New</h2>
-            <!--div class="only_articles"-->
-                <article class="new_article">
-                  <button class="new_button">Hydrogen VS Electric Cars</button>
-                  <p class="new_par">Will hydrogen-fueled cars ever catch up to EVs?</p>
-                </article>
-                <div class="par_separator"></div>
-                <article class="new_article">
-                  <button class="new_button">The Downsides of AI Artistry</button>
-                  <p class="new_par">What are the possible adverse effects of on-demand AI image
-                    generation?
-                  </p>
-                </article>
-                <div class="par_separator"></div>
-                <article class="new_article">
-                  <button class="new_button">Is VC Funding Drying Up?</button>
-                  <p class="new_par">
-                  Private funding by VC firms is down 50% YOY. We take a look at what
-                  that means.
-                  </p>
-                </article>
-            <!--/div-->
-          </div>
         </section>
         <section id="pop" class="popular">
-          <article class="popular_article">
-            <img
-            src="assets/images/image-retro-pcs.jpg"
-            alt="retro PC"
-            class="popul_img"
-            />
-            <div class="popular_items">
-              <h3>01</h3>
-              <button class="popul_button">Reviving Retro PCs</button>
-              <p class="popul_par">
-              What happens when old PCs are given modern upgrades?
-              </p>
-            </div>
-          </article>
-          <article class="popular_article">
-            <img
-            src="assets/images/image-top-laptops.jpg"
-            alt="laptop keyboard"
-            class="popul_img"
-            />
-            <div class="popular_items">
-              <h3>02</h3>
-              <button class="popul_button">Top 10 Laptops of 2022</button>
-              <p class="popul_par">
-              Our best picks for various needs and budgets.
-              </p>
-            </div>
-          </article>
-          <article class="popular_article">
-            <img
-            src="assets/images/image-gaming-growth.jpg"
-            alt="gaming pad"
-            class="popul_img"
-            />
-            <div class="popular_items">
-              <h3>03</h3>
-              <button class="popul_button">The Growth of Gaming</button>
-              <p class="popul_par">
-              How the pandemic has sparked fresh opportunities.
-              </p>
-            </div>
-          </article>
         </section>
       <main>
     </div>
-<script>
+  <script>
   let mobile_menu = document.getElementById("mobile_menu");
-
-  function toggleMenu(){
-    mobile_menu.classList.toggle("open_menu")
+  function toggleMenu() {
+  mobile_menu.classList.toggle("open_menu");
   }
-</script>
-<!--comment-->
-<!--comment-->
+  function start() {
+  addElementToNews();
+  addElementToPopular();
+}
+function newsElement(title, text) {
+  const wrapper = document.createElement("article");
+  const titleElement = document.createElement("button");
+  const textElement = document.createElement("p");
+
+  titleElement.innerText = title;
+  textElement.innerText = text;
+
+  wrapper.insertAdjacentElement("afterbegin", titleElement);
+  wrapper.insertAdjacentElement("beforeend", textElement);
+
+  wrapper.classList.add("new_article");
+  titleElement.classList.add("new_button");
+  textElement.classList.add("new_par");
+
+  console.log(wrapper);
+
+  document
+    .querySelector("#new_art")
+    .insertAdjacentElement("beforeend", wrapper);
+}
+function addElementToNews() {
+  const newsData = [
+    {
+      title: "Hydrogen VS Electric Cars",
+      text: "Will hydrogen-fueled cars ever catch up to EVs?",
+    },
+    {
+      title: "The Downsides of AI Artistry",
+      text: "What are the possible adverse effects of on-demand AI image generation?",
+    },
+    {
+      title: "Is VC Funding Drying Up?",
+      text: "Private funding by VC firms is down 50% YOY. We take a look at what that means.",
+    },
+  ];
+  newsData.map((e) => {
+    console.log(e);
+    newsElement(e.title, e.text);
+  });
+}
+
+function popularElement(pic, picalt, id_no, title, text) {
+  const wrapper1 = document.createElement("article");
+  const picture = document.createElement("img");
+  const wrapper2 = document.createElement("div");
+  const idElement = document.createElement("h3");
+  const titleElement = document.createElement("button");
+  const textElement = document.createElement("p");
+
+  picture.src = pic;
+  idElement.innerText = id_no;
+  titleElement.innerText = title;
+  textElement.innerText = text;
+
+  wrapper1.insertAdjacentElement("afterbegin", picture);
+  wrapper1.insertAdjacentElement("beforeend", wrapper2);
+  wrapper2.insertAdjacentElement("afterbegin", titleElement);
+  wrapper2.insertAdjacentElement("afterbegin", idElement);
+  wrapper2.insertAdjacentElement("beforeend", textElement);
+
+  wrapper1.classList.add("popular_article");
+  wrapper1.setAttribute("id", id_no);
+  picture.classList.add("popul_img");
+  picture.setAttribute("alt", picalt);
+  wrapper2.classList.add("popular_items");
+  titleElement.classList.add("popul_button");
+  textElement.classList.add("popul_par");
+
+  console.log(wrapper1);
+
+  document.querySelector("#pop").insertAdjacentElement("beforeend", wrapper1);
+  document.getElementById(id_no).insertAdjacentElement("afterbegin", picture);
+  document.getElementById(id_no).insertAdjacentElement("beforeend", wrapper2);
+}
+function addElementToPopular() {
+  const popData = [
+    {
+      id_no: "01",
+      pic: "assets/images/image-retro-pcs.jpg",
+      picalt: "retro-pc",
+      title: "Reviving Retro PCs",
+      text: "What happens when old PCs are given modern upgrades?",
+    },
+    {
+      id_no: "02",
+      pic: "assets/images/image-top-laptops.jpg",
+      picalt: "keyboard",
+      title: "Top 10 Laptops of 2022",
+      text: "Our best picks for various needs and budgets.",
+    },
+    {
+      id_no: "03",
+      pic: "assets/images/image-gaming-growth.jpg",
+      picalt: "gaming pad",
+      title: "The Growth of Gaming",
+      text: "How the pandemic has sparked fresh opportunities.",
+    },
+  ];
+  popData.map((e) => {
+    console.log(e);
+    popularElement(e.pic, e.picalt, e.id_no, e.title, e.text);
+  });
+}
+start();
+
+  </script>
   </body>
 </html>
